@@ -27,7 +27,7 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between px-16 py-4">
         <Link href={"/"}>
-          <h1 className="text-2xl font-bold tracking-tight hover:cursor-pointer">
+          <h1 className="md:text-2xl text-l font-bold tracking-tight hover:cursor-pointer">
             <span className="text-accent">migo</span>dev
           </h1>
         </Link>

@@ -15,12 +15,16 @@ export default function Hero() {
           I excel at creating modern web solutions that deliver exceptional
           results. Let’s connect and bring your vision to life!
         </p>
-        <div className="flex space-x-4 mb-6">
+        <a
+          href="https://drive.google.com/file/d/184JWEUz5zhWRa0V3szov8YForYKT5L0q/view?usp=sharing"
+          className="flex space-x-4 mb-6"
+          target="_blank"
+        >
           <button className="flex hover:cursor-pointer hover:border-accent items-center gap-2 border border-light text-light font-semibold py-2 px-4 rounded-full transition-colors duration-300 hover:bg-accent hover:text-primary">
             Explore My Resume
             <LuExternalLink />
           </button>
-        </div>
+        </a>
         <div className="flex space-x-6 mt-6 text-light text-2xl">
           <a
             href="https://www.instagram.com/miguelhernandez1202"

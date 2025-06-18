@@ -204,21 +204,10 @@ const ResumeTabs = () => {
   };
 
   return (
-    <section className="min-h-screen text-light flex items-center justify-center p-8 md:p-48">
-      <div className="grid grid-cols-12 gap-8 w-full max-w-7xl">
+    <section className="min-h-screen text-light flex items-center justify-center p-6 md:p-24">
+      <div className="w-full max-w-7xl flex flex-col md:grid md:grid-cols-12 gap-8">
         {/* Sidebar Izquierdo */}
-        {/* <div className="self-start col-span-12 md:col-span-4 flex flex-col gap-4 border border-accent rounded-lg p-4 bg-primary/20">
-          {tabs.map((tab) => (
-            <TabButton
-              key={tab}
-              tab={tab}
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-          ))}
-        </div> */}
-
-        <div className="self-start col-span-12 md:col-span-4 flex flex-col gap-4 pt-2">
+        <div className="flex flex-row md:flex-col overflow-x-auto gap-2 md:gap-4 col-span-12 md:col-span-4 md:self-start pt-2 md:pt-0">
           {tabs.map((tab) => (
             <TabButton
               key={tab}
@@ -228,24 +217,12 @@ const ResumeTabs = () => {
             />
           ))}
         </div>
-        {/* border-2 border-accent rounded-3xl  bg-primary/10 shadow-[0_0_30px_rgba(4,242,231,0.2)] backdrop-blur-md */}
-        {/* <div
-          className="self-start col-span-12 md:col-span-4 flex flex-col gap-4 border-2 border-accent p-6 bg-primary/20 backdrop-blur-md
-  rounded-tl-[2rem] rounded-tr-4xl rounded-bl-md rounded-br-[2rem]"
-        >
-          {tabs.map((tab) => (
-            <TabButton
-              key={tab}
-              tab={tab}
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-          ))}
-        </div> */}
 
         {/* Contenido Derecho */}
-        <div className="col-span-12 md:col-span-8 space-y-4 h-[400px] px-6">
-          <h2 className="text-3xl font-bold text-accent">{activeTab}</h2>
+        <div className="col-span-12 md:col-span-8 mt-6 md:mt-0 space-y-4 px-2 md:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-accent text-center md:text-left">
+            {activeTab}
+          </h2>
           <div>{renderContent()}</div>
         </div>
       </div>
