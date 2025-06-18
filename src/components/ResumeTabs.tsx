@@ -205,7 +205,7 @@ const ResumeTabs = () => {
   return (
   
   <section className="min-h-screen text-light flex items-center justify-center p-6 md:p-24 mt-16">
-  <div className="w-full max-w-7xl h-[calc(100vh-4rem)] md:h-fit flex flex-col md:flex-row gap-8">
+  <div className="w-full max-w-7xl h-[calc(100vh-6rem)] md:h-fit flex flex-col md:flex-row gap-8">
     
     {/* Tabs */}
     <div className="w-full md:w-1/3 sticky top-25 md:top-24 z-10 hide-scrollbar flex-shrink-0 flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto gap-2 md:gap-4 pt-2 md:pt-0 md:max-h-[calc(100vh-8rem)]">
