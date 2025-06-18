@@ -7,7 +7,6 @@ import {
   SiRedux,
   SiMui,
 } from "react-icons/si";
-// Componente para cada botón del sidebar
 
 const TabButton = ({
   tab,
@@ -59,7 +58,7 @@ const ResumeTabs = () => {
     { label: "Material UI", icon: <SiMui className="text-blue-400" /> },
     { label: "Redux Toolkit", icon: <SiRedux className="text-purple-400" /> },
   ];
-  // Esta función devuelve el contenido de la pestaña activa
+  // Esta función devuelve el contenido de la pestaña que este activa
   const renderContent = () => {
     switch (activeTab) {
       case "Experience":
@@ -204,30 +203,35 @@ const ResumeTabs = () => {
   };
 
   return (
-    <section className="min-h-screen text-light flex items-center justify-center p-6 md:p-24">
-      <div className="w-full max-w-7xl flex flex-col md:grid md:grid-cols-12 gap-8">
-        {/* Sidebar Izquierdo */}
-        <div className="hide-scrollbar flex flex-row md:flex-col overflow-x-auto gap-2 md:gap-4 col-span-12 md:col-span-4 md:self-start pt-2 md:pt-0">
-          {tabs.map((tab) => (
-            <TabButton
-              key={tab}
-              tab={tab}
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-          ))}
-        </div>
+  
+  <section className="min-h-screen text-light flex items-center justify-center p-6 md:p-24 mt-16">
+  <div className="w-full max-w-7xl h-[calc(100vh-4rem)] md:h-fit flex flex-col md:flex-row gap-8">
+    
+    {/* Tabs */}
+    <div className="w-full md:w-1/3 sticky top-25 md:top-24 z-10 hide-scrollbar flex-shrink-0 flex flex-row md:flex-col overflow-x-auto md:overflow-y-auto gap-2 md:gap-4 pt-2 md:pt-0 md:max-h-[calc(100vh-8rem)]">
+      {tabs.map((tab) => (
+        <TabButton
+          key={tab}
+          tab={tab}
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+        />
+      ))}
+    </div>
 
-        {/* Contenido Derecho */}
-        <div className="col-span-12 md:col-span-8 mt-6 md:mt-0 space-y-4 px-2 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-accent text-center md:text-left">
-            {activeTab}
-          </h2>
-          <div>{renderContent()}</div>
-        </div>
-      </div>
-    </section>
+    {/* Contenido - para que haga scroll en las dos vistas */}
+    <div className="w-full md:w-2/3 overflow-y-auto space-y-4 px-2 md:px-6">
+      <h2 className="text-2xl md:text-3xl font-bold text-accent text-center md:text-left">
+        {activeTab}
+      </h2>
+      <div>{renderContent()}</div>
+    </div>
+  </div>
+</section>
+
   );
 };
 
 export default ResumeTabs;
+
+
