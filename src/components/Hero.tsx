@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { LuExternalLink } from "react-icons/lu";
 export default function Hero() {
   return (
-    <section className="relative h-screen  text-primary px-8 md:px-40 py-16 md:py-24 flex flex-col md:flex-row items-center gap-8">
+    <section className="relative mt-20 md:mt-0 h-screen  text-primary px-8 md:px-40 py-16 md:py-24 flex flex-col md:flex-row items-center gap-8">
       {/* Texto a la izquierda */}
       <div className="flex-1 md:order-1 order-2">
         <h1 className="text-4xl text-light md:text-5xl font-bold mb-4">

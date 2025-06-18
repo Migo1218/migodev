@@ -23,15 +23,18 @@ export default function Navbar() {
   return (
     <motion.nav
       style={{ background: bg, backdropFilter: blur }}
-      className="fixed top-0 left-0 w-full z-50 text-light md:px-24 transition-none"
+      className="fixed top-0 left-0 w-full z-50 text-light px-4 md:px-24 transition-none"
     >
-      <div className="flex items-center justify-between px-16 py-4">
-        <Link href={"/"}>
-          <h1 className="md:text-2xl text-l font-bold tracking-tight hover:cursor-pointer">
-            <span className="text-accent">migo</span>dev
-          </h1>
-        </Link>
-        <div className="space-x-6 font-semibold flex items-center">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between py-4 gap-4 md:gap-0">
+        <div className="flex justify-between items-center px-2 md:px-0">
+          <Link href="/">
+            <h1 className="text-xl md:text-2xl font-bold tracking-tight hover:cursor-pointer">
+              <span className="text-accent">migo</span>dev
+            </h1>
+          </Link>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-4 font-semibold text-sm md:text-base">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -42,7 +45,6 @@ export default function Navbar() {
                   }`}
                 >
                   {link.label}
-
                   {isActive && (
                     <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-accent rounded-full"></span>
                   )}
