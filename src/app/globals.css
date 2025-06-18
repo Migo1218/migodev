@@ -11,3 +11,12 @@
   --color-extra: #ff00ff; /* Fucsia neón - opcional */
   --color-test: #17b8a6;
 }
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}

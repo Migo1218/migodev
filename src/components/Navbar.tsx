@@ -41,7 +41,7 @@ export default function Navbar() {
               <Link key={link.href} href={link.href}>
                 <span
                   className={`relative transition-colors ${
-                    isActive ? "text-accent" : "hover:text-accent"
+                    isActive ? "text-accent text-base" : "hover:text-accent  text-base"
                   }`}
                 >
                   {link.label}

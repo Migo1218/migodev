@@ -207,7 +207,7 @@ const ResumeTabs = () => {
     <section className="min-h-screen text-light flex items-center justify-center p-6 md:p-24">
       <div className="w-full max-w-7xl flex flex-col md:grid md:grid-cols-12 gap-8">
         {/* Sidebar Izquierdo */}
-        <div className="flex flex-row md:flex-col overflow-x-auto gap-2 md:gap-4 col-span-12 md:col-span-4 md:self-start pt-2 md:pt-0">
+        <div className="hide-scrollbar flex flex-row md:flex-col overflow-x-auto gap-2 md:gap-4 col-span-12 md:col-span-4 md:self-start pt-2 md:pt-0">
           {tabs.map((tab) => (
             <TabButton
               key={tab}
