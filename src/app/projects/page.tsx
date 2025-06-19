@@ -151,7 +151,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Flechas */}
-        <div className="absolute md:bottom-2 bottom-3 hover:cursor-pointer  left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
+        <div className="absolute md:bottom-2 bottom-8 hover:cursor-pointer  left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
           <button
             onClick={prev}
             className="p-2 bg-card-dark rounded-full hover:bg-card transition"
