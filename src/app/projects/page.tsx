@@ -72,7 +72,7 @@ export default function ProjectsPage() {
             {projects.map((p, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 w-full flex flex-col lg:flex-row items-center gap-8"
+                className="flex-shrink-0 w-full mt-24 flex flex-col lg:flex-row items-center gap-8"
               >
                 {/* Texto */}
                 <div className="lg:w-1/2 text-center lg:text-left relative">
@@ -182,7 +182,6 @@ export default function ProjectsPage() {
     </section>
   );
 }
-
 
 // "use client";
 // import { useState } from "react";
