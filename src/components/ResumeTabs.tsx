@@ -1,6 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
-import { FiX } from "react-icons/fi";
 import {
   SiReact,
   SiNextdotjs,
@@ -9,7 +7,8 @@ import {
   SiRedux,
   SiMui,
 } from "react-icons/si";
-import { FaBarsStaggered } from "react-icons/fa6";
+import { useScroll, useTransform, motion } from "framer-motion";
+
 const TabButton = ({
   tab,
   activeTab,
@@ -51,7 +50,6 @@ const ExperienceCard = ({
 
 const ResumeTabs = () => {
   const [activeTab, setActiveTab] = useState("Experience");
-  const [isOpen, setIsOpen] = useState(false);
   const tabs = ["Experience", "Education", "Skills", "About"];
   const skills = [
     { label: "React", icon: <SiReact className="text-cyan-400" /> },
@@ -205,56 +203,28 @@ const ResumeTabs = () => {
     }
   };
 
+  const { scrollY } = useScroll();
+  const mobileBg = useTransform(
+    scrollY,
+    [0, 50],
+    ["rgba(10,15,31,0)", "rgba(10,15,31,0.8)"]
+  );
+  const mobileBlur = useTransform(
+    scrollY,
+    [0, 50],
+    ["blur(0px)", "blur(10px)"]
+  );
+
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 md:px-24 text-light">
-      <div className="w-full max-w-7xl flex flex-col md:flex-row gap-8 items-center justify-center">
-        {/* Sidebar */}
-        <div className="w-full md:w-1/3 flex flex-col items-center">
-          {/* Mobile hamburger button */}
-          <div className="md:hidden flex justify-between items-center mb-4 w-full px-2">
-            <button
-              className="text-light text-2xl"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <FiX /> : <FaBarsStaggered />}
-            </button>
-            <span className="text-light font-semibold text-lg">
-              {activeTab}
-            </span>
-          </div>
+    <section className="min-h-screen text-light flex items-center justify-center md:p-6 md:p-24 mt-16">
+      <div className="w-full max-w-7xl h-[calc(100vh-4rem)] md:h-fit flex flex-col md:flex-row gap-8">
+        {/* Tabs */}
 
-          {/* Mobile dropdown */}
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="md:hidden flex flex-col gap-2 px-2 pb-4 w-full"
-              >
-                {tabs.map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => {
-                      setActiveTab(tab);
-                      setIsOpen(false);
-                    }}
-                    className={`text-left px-4 py-2 rounded-lg border border-light text-light font-medium ${
-                      tab === activeTab
-                        ? "bg-accent text-primary"
-                        : "hover:bg-accent/20"
-                    }`}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          {/* Desktop tabs */}
-          <div className="hidden md:flex flex-col gap-4 w-full">
+        <div className="md:hidden sticky top-24 z-40 w-full">
+          <motion.div
+            style={{ background: mobileBg, backdropFilter: mobileBlur }}
+            className="flex overflow-x-auto gap-2 p-5 hide-scrollbar border border-accent/20 rounded-xl"
+          >
             {tabs.map((tab) => (
               <TabButton
                 key={tab}
@@ -263,12 +233,24 @@ const ResumeTabs = () => {
                 setActiveTab={setActiveTab}
               />
             ))}
-          </div>
+          </motion.div>
         </div>
 
-        {/* Contenido */}
-        <div className="w-full md:w-2/3 space-y-4 px-2 md:px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-accent">
+        {/* ✅ DESKTOP */}
+        <div className="hidden md:flex flex-col gap-4 w-1/3 max-h-[calc(100vh-8rem)] sticky top-24 overflow-y-auto">
+          {tabs.map((tab) => (
+            <TabButton
+              key={tab}
+              tab={tab}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
+          ))}
+        </div>
+
+        {/* Contenido - para que haga scroll en las dos vistas */}
+        <div className="w-full md:w-2/3 overflow-y-auto space-y-4 px-2 md:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-accent text-center md:text-left">
             {activeTab}
           </h2>
           <div>{renderContent()}</div>
