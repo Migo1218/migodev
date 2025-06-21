@@ -4,7 +4,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { SiReact, SiTailwindcss, SiTypescript, SiRedux } from "react-icons/si";
+import {
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiRedux,
+  SiAstro,
+  SiMongodb,
+  SiAmazonwebservices,
+} from "react-icons/si";
 import { SiVite } from "react-icons/si";
 import type { IconType } from "react-icons";
 
@@ -25,8 +33,8 @@ const projects: Project[] = [
       "A modern Tic Tac Toe game built with React, TypeScript, and Zustand for state management. Includes smooth animations with Framer Motion and styled using Tailwind CSS.",
     imageSuper: "/imgs/tictacgame.png",
     imageSmall: "/imgs/tictacmain.png",
-    liveUrl: "https://tic-tac-toe-game-ashy-beta.vercel.app/",
-    repoUrl: "https://github.com/Migo1218/TicTacToe_Game",
+    liveUrl: "https://tic-tac-toe-game-gules.vercel.app/",
+    repoUrl: "https://github.com/Migo1218/tic-tac-toe-game",
     techIcons: [SiReact, SiTypescript, SiTailwindcss, SiVite],
   },
 
@@ -35,9 +43,26 @@ const projects: Project[] = [
     description:
       "A fun and colorful two-player strategy game where players take turns dropping discs into a vertical grid. The goal is to connect four of your own pieces in a row — horizontally, vertically, or diagonally — before your opponent does.",
     imageSuper: "/imgs/connectfourgame.png",
-    liveUrl: "https://connect-four-game-kohl.vercel.app/",
-    repoUrl: "https://github.com/Migo1218/ConnectFourGame",
+    liveUrl: "https://connect-four-game-lime.vercel.app/",
+    repoUrl: "https://github.com/Migo1218/connect-four-game",
     techIcons: [SiReact, SiRedux, SiTailwindcss, SiVite],
+  },
+
+  {
+    title: "ShortiLink – Smart URL Shortener",
+    description:
+      "A modern and secure URL shortener built with Astro and React. Features user authentication with Lucia and MongoDB, real-time link generation, QR code creation, and AWS S3 integration. Styled with Tailwind CSS and optimized for serverless deployment on Vercel.",
+    imageSuper: "/imgs/shortlinkmain.png",
+    imageSmall: "/imgs/shortlinksmall.png",
+    liveUrl: "https://shortlinks-nine.vercel.app/",
+    repoUrl: "https://github.com/Migo1218/shortlinks",
+    techIcons: [
+      SiAstro,
+      SiReact,
+      SiTailwindcss,
+      SiMongodb,
+      SiAmazonwebservices,
+    ],
   },
 ];
 
