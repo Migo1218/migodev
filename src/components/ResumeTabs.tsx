@@ -216,10 +216,10 @@ const ResumeTabs = () => {
   );
 
   return (
-    <section className="min-h-screen text-light flex items-center justify-center md:p-6 md:p-24 mt-16">
+    <section className="max-h-[calc(100vh-10rem)] text-light flex items-center justify-center md:p-24 md:mt-30 mt-16">
       <div className="w-full max-w-7xl h-[calc(100vh-4rem)] md:h-fit flex flex-col md:flex-row gap-8">
         {/* Tabs */}
-
+        {/* MOBILE */}
         <div className="md:hidden sticky top-24 z-40 w-full">
           <motion.div
             style={{ background: mobileBg, backdropFilter: mobileBlur }}
@@ -236,8 +236,8 @@ const ResumeTabs = () => {
           </motion.div>
         </div>
 
-        {/* ✅ DESKTOP */}
-        <div className="hidden md:flex flex-col gap-4 w-1/3 max-h-[calc(100vh-8rem)] sticky top-24 overflow-y-auto">
+        {/* DESKTOP */}
+        <div className="hidden  md:flex flex-col gap-4 w-1/3 max-h-[calc(100vh-8rem)] sticky top-24 overflow-y-auto">
           {tabs.map((tab) => (
             <TabButton
               key={tab}
@@ -248,8 +248,7 @@ const ResumeTabs = () => {
           ))}
         </div>
 
-        {/* Contenido - para que haga scroll en las dos vistas */}
-        <div className="w-full md:w-2/3 overflow-y-auto space-y-4 px-2 md:px-6">
+        <div className="w-full md:min-h-[calc(100vh-20rem)] md:w-2/3 overflow-y-auto space-y-4 px-4 md:px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-accent text-center md:text-left">
             {activeTab}
           </h2>
