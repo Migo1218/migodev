@@ -216,7 +216,7 @@ const ResumeTabs = () => {
   );
 
   return (
-    <section className="max-h-[calc(100vh-10rem)] text-light flex items-center justify-center md:p-24 md:mt-30 mt-16">
+    <section className="h-screen md:max-h-[calc(100vh-10rem)] text-light flex items-center justify-center md:p-24 md:mt-30 mt-16">
       <div className="w-full max-w-7xl h-[calc(100vh-4rem)] md:h-fit flex flex-col md:flex-row gap-8">
         {/* Tabs */}
         {/* MOBILE */}
