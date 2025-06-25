@@ -176,7 +176,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Flechas */}
-        <div className="absolute md:bottom-2 bottom-8 hover:cursor-pointer  left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
+        <div className="md:absolute md:bottom-2 bottom-0 left-0 right-0 md:left-1/2 md:transform md:-translate-x-1/2 flex justify-center items-center space-x-4 py-2">
           <button
             onClick={prev}
             className="p-2 bg-card-dark rounded-full hover:bg-card transition"
